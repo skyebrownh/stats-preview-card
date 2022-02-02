@@ -74,6 +74,10 @@ main img {
     vertical-align: middle;
 }
 
+main .desktop-img {
+    display: none;
+}
+
 main h1 {
     margin-bottom: 15px;
 }
@@ -106,4 +110,50 @@ main .content .details {
     text-transform: uppercase;
     font-size: 11px;
     letter-spacing: 1px;
+}
+
+/* media queries */
+@media (min-width: 1440px) {
+    main {
+        display: flex;
+        max-width: 1024px;
+        text-align: left;
+    }
+
+    main .img-overlay {
+        order: 2;
+    }
+
+    main img,
+    main .img-overlay::before {
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 10px;
+    }
+
+    main .mobile-img {
+        display: none;
+    }
+
+    main .desktop-img {
+        display: inline-block;
+    }
+
+    main .content {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    main .content > * {
+        max-width: 75%;
+    }
+
+    .stats {
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+    }
 }
