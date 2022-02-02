@@ -1,5 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+    --main-bg-color: hsl(233, 47%, 7%);
+    --card-bg-color: hsl(244, 38%, 16%);
+    --accent-color: hsl(277, 64%, 61%);
+    --white-color: hsl(0, 0%, 100%);
+    --white-text-color-1: hsla(0, 0%, 100%, 0.75);
+    --white-text-color-2: hsla(0, 0%, 100%, 0.6);
+}
+
+/* global reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* base styles */
+body {
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    background: var(--main-bg-color);
+    color: var(--white-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.color-purple {
+    color: var(--accent-color);
+}
+
+/* card */
+main {
+    margin: 1rem;
+    background: var(--card-bg-color);
+    border-radius: 10px;
+    text-align: center;
+}
+
+main .img-overlay {
+    position: relative;
+    display: inline-block;
+}
+
+main .img-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    opacity: 0.5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+main img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    vertical-align: middle;
+}
+
+main h1 {
+    margin-bottom: 15px;
+}
+
+main .content {
+    padding: 30px;
+}
+
+main .content .details {
+    color: var(--white-text-color-1);
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* stats */
+.stats {
+    font-family: 'Lexend Deca', sans-serif;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stats .stat-value {
+    font-size: 18px;
+}
+
+.stats .stat-desc {
+    color: var(--white-text-color-2);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
 }
